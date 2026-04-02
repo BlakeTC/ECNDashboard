@@ -405,8 +405,7 @@ body {
 /* ── Bird thumbnail hover tooltip ── */
 .bird-thumb-wrap { position: relative; display: inline-block; }
 .bird-thumb-tooltip {
-  display: none; position: absolute; top: calc(100% + 10px); left: 50%;
-  transform: translateX(-50%);
+  display: none; position: absolute; top: 0; left: calc(100% + 14px);
   background: #f5f2ea; border: 1.5px solid #ddd; border-radius: 14px;
   padding: 10px 14px; width: 190px; font-size: 0.82rem; line-height: 1.5;
   box-shadow: 0 4px 20px rgba(0,0,0,0.14); z-index: 9999;
@@ -414,9 +413,9 @@ body {
 }
 .bird-thumb-tooltip::before {
   content: ''; position: absolute;
-  top: -10px; left: 50%; transform: translateX(-50%);
+  top: 20px; left: -10px;
   border: 8px solid transparent;
-  border-bottom-color: #f5f2ea; border-top: 0;
+  border-right-color: #f5f2ea; border-left: 0;
 }
 
 .bird-thumb-wrap:hover .bird-thumb-tooltip { display: block; }
@@ -424,7 +423,7 @@ body {
   margin-top: 10px; font-size: 0.78rem; font-weight: 700;
   color: #023629; opacity: 0.7;
 }
-
+  
 /* ── Guide bird swoop animations ── */
 @keyframes swoop-in-left {
   0%   { opacity: 0; transform: translate(-100px, -40px) rotate(-20deg) scale(0.4); }
