@@ -601,7 +601,7 @@ body {
 .outro-sub { font-size: 1rem; opacity: 0.75; max-width: 600px; margin: 0 auto 32px; line-height: 1.6; }
 /* ── Butterfly / tornado chart ── */
 .butterfly-wrap {
-  background: #f5f2ea; border-radius: 22px;
+  background: #ffffff; border-radius: 22px;
   padding: 28px 20px 20px;
   box-shadow: 0 4px 28px rgba(0,0,0,0.09);
   width: 90vw; max-width: 1400px; margin: 0 auto 40px;
@@ -2127,13 +2127,6 @@ function buildChapter(code, chapter, narratives) {
     <span class="hero-date-pill">${chapter.year_start}\u2013${chapter.year_end} (${chapter.n_years} year${chapter.n_years !== 1 ? 's' : ''})</span>
   `;
   section.appendChild(hero);
-
-  if (code === 'T10') {
-    const note = document.createElement('div');
-    note.className   = 'short-window-note scroll-section';
-    note.textContent = '\u26A0 Only 5 years of data at Porton Down; the charts below cover 1994\u20131998.';
-    section.appendChild(note);
-  }
 
   // Content area (3 or 4 column grid)
   const contentArea = document.createElement('div');
