@@ -2367,7 +2367,7 @@ window.addEventListener('wheel', function(e) {
         if (!cardsRect) continue;
         const hero = el.querySelector('.site-hero');
         const heroH = hero ? hero.offsetHeight : 287;
-        const lockZoneBottom = heroH + 20;
+        const lockZoneBottom = heroH + 110;
         const lockZoneTop = -(cardsRect.height * 0.4);
         if (cardsRect.top <= lockZoneBottom && cardsRect.top > lockZoneTop) {
 
