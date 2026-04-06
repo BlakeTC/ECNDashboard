@@ -17,7 +17,7 @@ body {
   overflow-x: hidden;
 }
 
-/* ── Scroll animation ── */
+/* Scroll animation */
 .scroll-section {
   opacity: 0;
   transform: translateY(32px);
@@ -29,7 +29,7 @@ body {
   .scroll-hint    { animation: none !important; }
 }
 
-/* ── Scrubber ── */
+/* Scrubber */
 .scrubber-wrap {
   display: flex; align-items: center; gap: 10px;
   width: 100%; margin: 20px 0 0; padding: 0 12px 24px;
@@ -76,7 +76,7 @@ body {
   font-family: 'Figtree', sans-serif;
   pointer-events: none;
 }
-/* Lock indicator: subtle pulse on hero when scroll is locked */
+/* Lock indicator (little pulse when scroll locked) */
 .site-hero.scroll-locked::after {
   content: '';
 }
@@ -85,7 +85,7 @@ body {
   .site-hero.scroll-locked::after { animation: none; opacity: 0.7; }
 }
 
-/* ── Intro ── */
+/* Intro */
 #section-intro {
   min-height: 100vh; position: relative; z-index: 10;
   display: flex; flex-direction: column;
@@ -130,7 +130,7 @@ body {
   50%       { transform: translateY(10px); }
 }
 
-/* ── Meet the Birds ── */
+/* "Meet the Birds" */
 #section-meet-birds {
   min-height: 100vh; position: relative; z-index: 10;
   display: flex; flex-direction: column;
@@ -1530,6 +1530,14 @@ function buildButterflyChart() {
   const g = svg.append('g')
     .attr('transform', `translate(${margin.left},${margin.top})`);
 
+  // Chart title
+  g.append('text')
+    .attr('x', iW / 2).attr('y', -20)
+    .attr('text-anchor', 'middle')
+    .attr('font-family', 'Figtree, sans-serif').attr('font-size', 20).attr('font-weight', 900)
+    .attr('fill', '#1a1a2e')
+    .text('How much did bird populations change overall?');
+ 
   // Zero / horizon line
   g.append('line')
     .attr('x1', -10).attr('x2', iW + 10)
@@ -1753,6 +1761,14 @@ function buildButterflyChartNormalised() {
   const g = svg.append('g')
     .attr('transform', `translate(${margin.left},${margin.top})`);
 
+  // Chart title
+  g.append('text')
+    .attr('x', iW / 2).attr('y', -20)
+    .attr('text-anchor', 'middle')
+    .attr('font-family', 'Figtree, sans-serif').attr('font-size', 20).attr('font-weight', 900)
+    .attr('fill', '#1a1a2e')
+    .text('How much did bird populations change per year?');
+ 
   // Zero / horizon line
   g.append('line')
     .attr('x1', -10).attr('x2', iW + 10)
@@ -1949,7 +1965,7 @@ function buildObservationTimeline() {
       .attr('font-family','Nunito,sans-serif').attr('font-size',12).attr('font-weight','700').attr('fill','#333'));
 
   // Vertical gridlines at decade intervals
-  const decades = d3.range(Math.ceil(minYear/10)*10, maxYear+1, 10);
+  const decades = d3.range(minYear, maxYear+5, 5);
   g.append('g').selectAll('line').data(decades).join('line')
     .attr('x1', d => xScale(d)).attr('x2', d => xScale(d))
     .attr('y1', 0).attr('y2', iH)
