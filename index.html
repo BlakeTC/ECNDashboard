@@ -2362,10 +2362,15 @@ window.addEventListener('wheel', function(e) {
         }
       } else {
         // Site chapter: existing cardsRow-based check
+        const cardsRect = el._cardsRow
+          ? el._cardsRow.getBoundingClientRect() : null;
+        if (!cardsRect) continue;
         const hero = el.querySelector('.site-hero');
-        if (!hero) continue;
-        const heroRect = hero.getBoundingClientRect();
-        if (heroRect.top <= 5 && heroRect.bottom > 0) {
+        const heroH = hero ? hero.offsetHeight : 287;
+        const lockZoneBottom = heroH + 80;
+        const lockZoneTop = -(cardsRect.height * 0.4);
+        if (cardsRect.top <= lockZoneBottom && cardsRect.top > lockZoneTop) {
+
 
           enterSection(el);
           driveAnimation(e.deltaY);
