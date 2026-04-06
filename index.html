@@ -488,7 +488,7 @@ body {
   align-self: flex-start;
   display: inline-flex; align-items: center; gap: 5px;
   padding: 5px 14px; border-radius: 20px;
-  font-size: 0.78rem; font-weight: 800; color: #fff; letter-spacing: 0.3px;
+  font-size: 0.875rem; font-weight: 800; color: #fff; letter-spacing: 0.3px;
 }
 .badge-grower   { background: #34a853; }
 .badge-decliner { background: #c03a53; }
@@ -532,13 +532,13 @@ body {
   margin: -4px 0 -2px;
 }
 .card-species-name { font-size: 1.3rem; font-weight: 900; text-align: center; }
-.card-change-label { font-size: 1rem; font-weight: 900; text-align: center; color: #023629 !important; }
+.card-change-label { font-size: 1rem; font-weight: 900; text-align: center; color: #023629 !important; line-height: 1.5; }
 .card-narrative    { font-size: 0.91rem; line-height: 1.62; text-align: center; color: #3a3530; flex: 1; }
 .card-silhouette   { display: block; }
 .card-silhouette-emoji { font-size: 52px; line-height: 1; text-align: center; }
 
 .card-rspb-link {
-  display: inline-block; font-size: 0.78rem; font-weight: 800;
+  display: inline-block; font-size: 0.875rem; font-weight: 800;
   text-decoration: none; color: #023629;
   background: rgba(2,54,41,0.08); border: 1.5px solid rgba(2,54,41,0.25);
   border-radius: 20px; padding: 5px 14px;
@@ -1965,7 +1965,7 @@ function buildObservationTimeline() {
       .attr('font-family','Nunito,sans-serif').attr('font-size',12).attr('font-weight','700').attr('fill','#333'));
 
   // Vertical gridlines at decade intervals
-  const decades = d3.range(minYear, maxYear+5, 5);
+  const decades = d3.range(Math.ceil(minYear/5)*5, maxYear+1, 5);
   g.append('g').selectAll('line').data(decades).join('line')
     .attr('x1', d => xScale(d)).attr('x2', d => xScale(d))
     .attr('y1', 0).attr('y2', iH)
