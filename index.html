@@ -1572,14 +1572,14 @@ function buildButterflyChart() {
       .attr('x', bx + bw / 2).attr('y', zeroY - gBarH - 18)
       .attr('text-anchor', 'middle')
       .attr('font-family', 'Figtree, sans-serif').attr('font-size', 13).attr('font-weight', 800)
-      .attr('fill', '#4daf4a')
+      .attr('fill', '#1D8825')
       .text('\u2191 ' + d.growerAbs + ' pair' + (d.growerAbs !== 1 ? 's' : ''));
     // "up from X" (second line)
     labelG.append('text')
       .attr('x', bx + bw / 2).attr('y', zeroY - gBarH - 4)
       .attr('text-anchor', 'middle')
       .attr('font-family', 'Figtree, sans-serif').attr('font-size', 10).attr('font-weight', 600)
-      .attr('fill', '#4daf4a').attr('opacity', 0.7)
+      .attr('fill', '#1D8825').attr('opacity', 0.7)
       .text('up from ' + d.growerStart);
 
     // Grower species (above count)
@@ -1802,14 +1802,14 @@ function buildButterflyChartNormalised() {
       .attr('x', bx + bw / 2).attr('y', zeroY - gBarH - 18)
       .attr('text-anchor', 'middle')
       .attr('font-family', 'Figtree, sans-serif').attr('font-size', 13).attr('font-weight', 800)
-      .attr('fill', '#4daf4a')
+      .attr('fill', '#1D8825')
       .text('\u2191 x' + d.growerMultiplier + ' more pairs');
     // "over X years"
     labelG.append('text')
       .attr('x', bx + bw / 2).attr('y', zeroY - gBarH - 4)
       .attr('text-anchor', 'middle')
       .attr('font-family', 'Figtree, sans-serif').attr('font-size', 10).attr('font-weight', 600)
-      .attr('fill', '#4daf4a').attr('opacity', 0.7)
+      .attr('fill', '#1D8825').attr('opacity', 0.7)
       .text('over ' + d.nYears + ' years');
 
     // Grower species
